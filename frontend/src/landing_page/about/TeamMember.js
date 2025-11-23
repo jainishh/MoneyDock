@@ -14,7 +14,7 @@ function TeamMember() {
           name: "Nikhil Kamath",
           rol: "Co-founder & CFO",
           image: "media/images/Nikhil.jpg",
-          bio: "Nikhil is an astute and experienced investor, and he heads financial planning at Zerodha. An avid reader, he always appreciates a good game of chess.",
+          bio: "Nikhil is an astute and experienced investor, and he heads financial planning at MoneyDock. An avid reader, he always appreciates a good game of chess.",
         },
         {
           name: "Dr. Kailash Nadh",
@@ -26,7 +26,7 @@ function TeamMember() {
           name: "Venu Madhav",
           rol: "COO",
           image: "media/images/Venu.jpg",
-          bio: "Venu is the backbone of Zerodha taking care of operations and ensuring that we are compliant to rules and regulations. He has over a dozen certifications in financial markets and is also proficient in technical analysis. Workouts, cycling, and adventuring is what he does outside of Zerodha.",
+          bio: "Venu is the backbone of MoneyDock taking care of operations and ensuring that we are compliant to rules and regulations. He has over a dozen certifications in financial markets and is also proficient in technical analysis. Workouts, cycling, and adventuring is what he does outside of MoneyDock.",
         },
         {
           name: "Hanan Delvi",
@@ -38,13 +38,13 @@ function TeamMember() {
           name: "Seema Patil",
           rol: "Director",
           image: "media/images/Seema.jpg",
-          bio: "Seema who has lead the quality team since the beginning of Zerodha, is now a director. She is an extremely disciplined fitness enthusiast.",
+          bio: "Seema who has lead the quality team since the beginning of MoneyDock, is now a director. She is an extremely disciplined fitness enthusiast.",
         },
         {
           name: "Karthik Rangappa",
           rol: "Chief of Education",
           image: "media/images/Karthik.jpg",
-          bio: "Karthik Guru Rangappa single handledly wrote Varsity, Zerodha's massive educational program. He heads investor education initiatives at Zerodha and loves stock markets, classic rock, single malts, and photography.",
+          bio: "Karthik Guru Rangappa single handledly wrote Varsity, MoneyDock's massive educational program. He heads investor education initiatives at MoneyDock and loves stock markets, classic rock, single malts, and photography.",
         },
         {
           name: "Austin Prakesh",

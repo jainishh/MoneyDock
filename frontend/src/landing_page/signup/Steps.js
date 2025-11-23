@@ -14,7 +14,7 @@ function Steps() {
         className="text-center mb-5"
         style={{ color: "#424242", fontSize: "1.6rem", fontWeight: "500" }}
       >
-        Steps to open a demat account with Zerodha
+        Steps to open a demat account with MoneyDock
       </h2>
 
       <div className="row align-items-center justify-content-center">

@@ -1,7 +1,9 @@
 import React from "react";
 import "./InvestmentOptions.css";
+import { useNavigate } from "react-router-dom";
 
 function InvestmentOptions() {
+  const navigate = useNavigate();
   const options = [
     {
       title: "Stocks",
@@ -31,7 +33,7 @@ function InvestmentOptions() {
         className="mb-5"
         style={{ color: "#424242", fontSize: "1.6rem", fontWeight: "500" }}
       >
-        Investment options with Zerodha demat account
+        Investment options with MoneyDock demat account
       </h2>
 
       {/* Two-column layout */}
@@ -71,6 +73,10 @@ function InvestmentOptions() {
         <button
           className="btn btn-primary fs-5 px-4 py-2 "
           style={{ backgroundColor: "#387ed1", fontWeight: "500" }}
+          onClick={() => {
+            window.scrollTo(0, 0);
+            navigate("/signup");
+          }}
         >
           Explore Investments
         </button>

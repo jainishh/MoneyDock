@@ -40,9 +40,9 @@ function Team() {
         </div>
         <div className="col-12 col-md-6 ceo-pera-div text-center text-md-start">
           <p className="ceo-pera">
-            Nithin bootstrapped and founded Zerodha in 2010 to overcome the
+            Nithin bootstrapped and founded MoneyDock in 2010 to overcome the
             hurdles he faced during his decade long stint as a trader. Today,
-            Zerodha has changed the landscape of the Indian broking industry.
+            MoneyDock has changed the landscape of the Indian broking industry.
           </p>
           <p className="ceo-pera">
             He is a member of the SEBI Secondary Market Advisory Committee

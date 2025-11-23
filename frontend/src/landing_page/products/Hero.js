@@ -10,7 +10,7 @@ function Hero() {
             className="mb-3"
             style={{ fontSize: "1.75rem", color: "#424242", fontWeight: 500 }}
           >
-            Zerodha Products
+            MoneyDock Products
           </h1>
           <p
             className="mb-4"

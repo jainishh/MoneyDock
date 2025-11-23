@@ -14,7 +14,7 @@ function NotFound() {
           <h5 className="text-muted">
             We couldn’t find the page you were looking <br></br>for. Visit{" "}
             <Link style={{ textDecoration: "none", color: "#387ed1" }} to="/">
-              Zerodha’s home page
+              MoneyDock’s home page
             </Link>
           </h5>
         </div>

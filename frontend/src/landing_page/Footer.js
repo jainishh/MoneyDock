@@ -9,13 +9,13 @@ function Footer() {
         <div className="row p-4">
           <div className="col-12 col-md-3 py-5 text-muted">
             <img
-              src="media/images/logo.svg"
+              src="media/images/logoone.png"
               alt="Logo"
-              style={{ width: "70%" }}
+              style={{ width: "50%" }}
             />
             <br />
             <br />
-            &copy; 2010 - 2025, Zerodha Broking Ltd <br />
+            &copy; 2010 - 2025, MoneyDock Broking Ltd <br />
             All rights reserved.
             <br />
             <span className="footer-link">
@@ -78,9 +78,9 @@ function Footer() {
             <br></br>
             <a href="#">Careers</a>
             <br></br>
-            <a href="#">Zerodha Cares (CSR)</a>
+            <a href="#">MoneyDock Cares (CSR)</a>
             <br></br>
-            <a href="#">Zerodha.tech</a>
+            <a href="#">MoneyDock.tech</a>
             <br></br>
             <a href="#">Open source</a>
             <br></br>
@@ -107,27 +107,27 @@ function Footer() {
         <div className="row">
           <div className="col-12">
             <p className="footer-para">
-              Zerodha Broking Ltd.: Member of NSE, BSE​ &​ MCX – SEBI
+              MoneyDock Broking Ltd.: Member of NSE, BSE​ &​ MCX – SEBI
               Registration no.: INZ000031633 CDSL/NSDL: Depository services
-              through Zerodha Broking Ltd. – SEBI Registration no.:
-              IN-DP-431-2019 Commodity Trading through Zerodha Commodities Pvt.
-              Ltd. MCX: 46025; NSE-50001 – SEBI Registration no.: INZ000038238
-              Registered Address: Zerodha Broking Ltd., #153/154, 4th Cross,
-              Dollars Colony, Opp. Clarence Public School, J.P Nagar 4th Phase,
-              Bengaluru - 560078, Karnataka, India. For any complaints
-              pertaining to securities broking please write to{" "}
+              through MoneyDock Broking Ltd. – SEBI Registration no.:
+              IN-DP-431-2019 Commodity Trading through MoneyDock Commodities
+              Pvt. Ltd. MCX: 46025; NSE-50001 – SEBI Registration no.:
+              INZ000038238 Registered Address: MoneyDock Broking Ltd., #153/154,
+              4th Cross, Dollars Colony, Opp. Clarence Public School, J.P Nagar
+              4th Phase, Bengaluru - 560078, Karnataka, India. For any
+              complaints pertaining to securities broking please write to{" "}
               <Link
                 to={"#"}
                 style={{ textDecoration: "none", color: "#387ED1" }}
               >
-                complaints@zerodha.com
+                complaints@MoneyDock.com
               </Link>
               , for DP related to{" "}
               <Link
                 to={"#"}
                 style={{ textDecoration: "none", color: "#387ED1" }}
               >
-                dp@zerodha.com
+                dp@MoneyDock.com
               </Link>
               . Please ensure you carefully read the Risk Disclosure Document as
               prescribed by SEBI | ICF
@@ -173,7 +173,7 @@ function Footer() {
               case of allotment. In case of non allotment the funds will remain
               in your bank account. As a business we don't give stock tips, and
               have not authorized anyone to trade on behalf of others. If you
-              find anyone claiming to be part of Zerodha and offering such
+              find anyone claiming to be part of MoneyDock and offering such
               services, please{" "}
               <Link
                 to={"#"}

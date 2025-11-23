@@ -168,7 +168,7 @@ function Brokerage() {
             Charged only on selling side when trading intraday or on F&O.
             <br></br>
             <br></br>
-            When trading at Zerodha, STT/CTT can be a lot more than the
+            When trading at MoneyDock, STT/CTT can be a lot more than the
             brokerage we charge. Important to keep a tab.
           </p>
 
@@ -200,7 +200,7 @@ function Brokerage() {
           <p className="heading">Call & trade</p>
           <p className="pera">
             Additional charges of ₹50 per order for orders placed through a
-            dealer at Zerodha including auto square off orders.
+            dealer at MoneyDock including auto square off orders.
           </p>
 
           <p className="heading">Stamp charges</p>
@@ -272,7 +272,7 @@ function Brokerage() {
             Charged only on selling side when trading intraday or on F&O.
             <br></br>
             <br></br>
-            When trading at Zerodha, STT/CTT can be a lot more than the
+            When trading at MoneyDock, STT/CTT can be a lot more than the
             brokerage we charge. Important to keep a tab.
           </p>
 
@@ -304,7 +304,7 @@ function Brokerage() {
           <p className="heading">Call & trade</p>
           <p className="pera">
             Additional charges of ₹50 per order for orders placed through a
-            dealer at Zerodha including auto square off orders.
+            dealer at MoneyDock including auto square off orders.
           </p>
 
           <p className="heading">Stamp charges</p>

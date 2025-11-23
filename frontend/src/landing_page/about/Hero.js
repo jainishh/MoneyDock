@@ -25,7 +25,7 @@ function Hero() {
             We kick-started operations on the 15th of August, 2010 with the goal
             of breaking all barriers that traders and investors face in India in
             terms of cost, support, and technology. We named the company
-            Zerodha, a combination of Zero and "Rodha", the Sanskrit word for
+            MoneyDock, a combination of Money and "Dock", the Sanskrit word for
             barrier.
           </p>
           <p>

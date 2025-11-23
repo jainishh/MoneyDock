@@ -15,12 +15,12 @@ function Navbar() {
 
   return (
     <nav className="navbar navbar-expand-lg bg-light border-bottom fixed-top">
-      <div className="container p-2">
+      <div className="container p-1">
         <Link className="navbar-brand" to="/">
           <img
-            src="media/images/logo.svg"
+            src="media/images/logoone.png"
             alt="logo"
-            style={{ width: "140px" }}
+            style={{ width: "120px" }}
           />
         </Link>
 

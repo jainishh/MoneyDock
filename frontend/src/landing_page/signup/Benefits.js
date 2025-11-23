@@ -18,7 +18,7 @@ function Benefits() {
                 color: "#424242",
               }}
             >
-              Benefits of opening a Zerodha demat account
+              Benefits of opening a MoneyDock demat account
             </h2>
           </div>
         </div>
@@ -48,7 +48,7 @@ function Benefits() {
           </p>
 
           <h3 className="fs-5 mt-5 mb-4" style={{ color: "#424242" }}>
-            The Zerodha universe
+            The MoneyDock universe
           </h3>
           <p style={{ color: "#666666" }}>
             More than just an app — gain free access to the entire ecosystem of

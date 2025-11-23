@@ -98,22 +98,6 @@ const Menu = () => {
 
         {isProfileDropdownOpen && (
           <div className="dropdown">
-            <Link to="/" className="dropdownItem">
-              My Profile
-            </Link>
-            <Link to="/" className="dropdownItem">
-              Settings
-            </Link>
-            <button
-              className="dropdownItem"
-              onClick={() => {
-                localStorage.clear();
-                window.location.href = `${process.env.REACT_APP_FRONTEND_URL}`;
-              }}
-            >
-              Logout
-            </button>
-
             {viewportWidth <= 1117 && (
               <Link
                 to="/watchlist"
@@ -153,6 +137,21 @@ const Menu = () => {
                 Positions
               </Link>
             )}
+            <Link to="/" className="dropdownItem">
+              My Profile
+            </Link>
+            <Link to="/" className="dropdownItem">
+              Settings
+            </Link>
+            <button
+              className="dropdownItem"
+              onClick={() => {
+                localStorage.clear();
+                window.location.href = `${process.env.REACT_APP_FRONTEND_URL}`;
+              }}
+            >
+              Logout
+            </button>
           </div>
         )}
       </div>

@@ -50,7 +50,13 @@ const SellActionWindow = ({ uid, stockPrice, stockQty = 1 }) => {
   if (!isVisible) return null;
 
   return (
-    <Draggable nodeRef={nodeRef} handle=".drag-header">
+    <Draggable
+      nodeRef={nodeRef}
+      handle=".drag-header"
+      cancel=".no-drag" // prevents drag when tapping close or buttons
+      enableUserSelectHack={false}
+      touchAction="none"
+    >
       <div ref={nodeRef} className="container" id="sell-window">
         {/* Header with Close Button */}
         <div
@@ -66,7 +72,11 @@ const SellActionWindow = ({ uid, stockPrice, stockQty = 1 }) => {
           }}
         >
           <span>Sell Window</span>
-          <IconButton size="small" onClick={handleClose}>
+          <IconButton
+            size="small"
+            onClick={handleClose}
+            onTouchStart={handleClose}
+          >
             <CloseIcon />
           </IconButton>
         </div>

@@ -144,7 +144,7 @@ function MainContent() {
           </AccordionItem>
           <AccordionItem
             icon="fa-user-circle"
-            title="Your Zerodha Account"
+            title="Your MoneyDock Account"
             expanded={openIndex === 1}
             onClick={() => setOpenIndex(openIndex === 1 ? -1 : 1)}
           >

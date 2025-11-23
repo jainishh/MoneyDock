@@ -91,12 +91,12 @@ function FAQs() {
             FAQs
           </h2>
           <AccordionItem
-            title="What is a Zerodha account?"
+            title="What is a MoneyDock account?"
             expanded={openIndex === 0}
             onClick={() => setOpenIndex(openIndex === 0 ? -1 : 0)}
           >
             <p style={{ fontSize: "1.1rem", color: "#666666" }}>
-              A Zerodha account is a combined demat and trading account that
+              A MoneyDock account is a combined demat and trading account that
               allows investors to buy, sell, and hold securities digitally.
             </p>
           </AccordionItem>
@@ -106,7 +106,7 @@ function FAQs() {
             onClick={() => setOpenIndex(openIndex === 1 ? -1 : 1)}
           >
             <p style={{ fontSize: "1.1rem", color: "#666666" }}>
-              The following documents are required to open a Zerodha account
+              The following documents are required to open a MoneyDock account
               online:
             </p>
             <ul
@@ -170,7 +170,7 @@ function FAQs() {
             </ul>
           </AccordionItem>
           <AccordionItem
-            title="Is Zerodha account opening free?"
+            title="Is MoneyDock account opening free?"
             expanded={openIndex === 2}
             onClick={() => setOpenIndex(openIndex === 2 ? -1 : 2)}
           >
@@ -212,7 +212,7 @@ function FAQs() {
               If UPI verification is completed successfully, no proof of bank is
               needed. However, if bank verification fails, you'll need to
               provide either a cancelled cheque or a bank statement to link your
-              bank account to Zerodha.
+              bank account to MoneyDock.
             </p>
           </AccordionItem>
         </div>

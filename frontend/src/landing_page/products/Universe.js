@@ -1,8 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./Universe.css";
+import { useNavigate } from "react-router-dom";
 
 function Universe() {
+  const navigate = useNavigate();
   return (
     <div className="container">
       <div className="row p-4 text-center align-items-center">
@@ -19,7 +21,7 @@ function Universe() {
           >
             Want to know more about our technology stack? Check out the{" "}
             <Link to={"#"} style={{ textDecoration: "none", color: "#387ED1" }}>
-              Zerodha.tech
+              MoneyDock.tech
             </Link>{" "}
             blog.
           </p>
@@ -28,7 +30,7 @@ function Universe() {
           <h2
             style={{ fontSize: "1.75rem", lineHeight: 2.5, color: "#424242" }}
           >
-            The Zerodha Universe
+            The MoneyDock Universe
           </h2>
           <p style={{ fontSize: "1.1rem", color: "#424242" }}>
             Extend your trading and investment experience even further with our
@@ -175,6 +177,10 @@ function Universe() {
           <button
             className="btn btn-primary fs-5 px-4 py-2 "
             style={{ backgroundColor: "#387ed1", fontWeight: "500" }}
+            onClick={() => {
+              window.scrollTo(0, 0);
+              navigate("/signup");
+            }}
           >
             Sign up for free
           </button>

@@ -17,7 +17,7 @@ function Awards() {
             Largest stock broker in India
           </h2>
           <p className="mb-4" style={{ fontSize: "1.1em", color: "#424242" }}>
-            2+ million Zerodha clients contribute to over 15% of all retail
+            2+ million MoneyDock clients contribute to over 15% of all retail
             order volumes in India daily by trading and investing in:
           </p>
           <div

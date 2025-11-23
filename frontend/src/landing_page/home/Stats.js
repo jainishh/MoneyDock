@@ -14,9 +14,9 @@ function Stats() {
             Customer-first always
           </h3>
           <p style={{ color: "#666666" }}>
-            That's why 1.6+ crore customers trust Zerodha with ~ ₹6 lakh crores
-            of equity investments and contribute to 15% of daily retail exchange
-            volumes in India.
+            That's why 1.6+ crore customers trust MoneyDock with ~ ₹6 lakh
+            crores of equity investments and contribute to 15% of daily retail
+            exchange volumes in India.
           </p>
 
           <h3 className="fs-5 mt-5" style={{ color: "#424242" }}>
@@ -31,7 +31,7 @@ function Stats() {
           </p>
 
           <h3 className="fs-5 mt-5" style={{ color: "#424242" }}>
-            The Zerodha universe
+            The MoneyDock universe
           </h3>
           <p style={{ color: "#666666" }}>
             Not just an app, but a whole ecosystem. Our investments in 30+
