@@ -1,0 +1,151 @@
+@import "tailwindcss";
+
+:root {
+  --bg-main: #0b0e14;
+  --bg-secondary: #14161f;
+  --bg-card: #1e2330;
+  --border-primary: #2a2e39;
+  --text-primary: #ffffff;
+  --text-secondary: #d1d4dc;
+  --text-muted: #868993;
+  --accent-primary: #4f46e5;
+  --scrollbar-track: #1e2330;
+  --scrollbar-thumb: #4f576b;
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --shadow-premium: 0 20px 25px -5px rgb(0 0 0 / 0.3), 0 8px 10px -6px rgb(0 0 0 / 0.2);
+  --shadow-accent: 0 10px 15px -3px rgba(92, 107, 192, 0.3);
+}
+
+html {
+  font-size: 16px;
+}
+
+html[data-font-size='Small'] {
+  font-size: 14px;
+}
+
+html[data-font-size='Medium'] {
+  font-size: 16px;
+}
+
+html[data-font-size='Large'] {
+  font-size: 18px;
+}
+
+[data-theme='light'] {
+  --bg-main: #f8fafc;
+  --bg-secondary: #f1f5f9;
+  --bg-card: #ffffff;
+  --border-primary: #e2e8f0;
+  --text-primary: #0f172a;
+  --text-secondary: #334155;
+  --text-muted: #64748b;
+  --accent-primary: #4f46e5;
+  --scrollbar-track: #f1f5f9;
+  --scrollbar-thumb: #cbd5e1;
+  --shadow-sm: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  --shadow-md: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --shadow-premium: 0 20px 25px -5px rgb(0 0 0 / 0.15), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+  --shadow-accent: 0 10px 15px -3px rgba(79, 70, 229, 0.25);
+}
+
+body {
+  background-color: var(--bg-main);
+  color: var(--text-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Global pointer cursor for all clickable elements */
+button,
+a,
+[role="button"],
+[role="link"],
+label[for],
+summary {
+  cursor: pointer;
+}
+
+
+/* Global Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: var(--bg-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--scrollbar-thumb);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--text-muted);
+}
+
+.customscrollbar {
+  overflow: auto;
+}
+
+.customscrollbar::-webkit-scrollbar-track {
+  background-color: var(--scrollbar-track);
+  border-radius: 4px;
+}
+
+.customscrollbar::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.customscrollbar::-webkit-scrollbar-thumb {
+  background-color: var(--scrollbar-thumb);
+  border-radius: 10px;
+}
+
+.customscrollbar::-webkit-scrollbar-thumb:hover {
+  background-color: #6b7280;
+}
+
+/* Thin scrollbar for horizontal tabs */
+.customscrollbar-thin::-webkit-scrollbar {
+  height: 3px;
+  width: 3px;
+}
+
+.customscrollbar-thin::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+.customscrollbar-thin::-webkit-scrollbar-thumb {
+  background-color: #3b3f4a;
+  border-radius: 10px;
+}
+
+.customscrollbar-thin::-webkit-scrollbar-thumb:hover {
+  background-color: #5a5f6b;
+}
+
+/* Hide scrollbar completely */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Hide number input spinners */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
