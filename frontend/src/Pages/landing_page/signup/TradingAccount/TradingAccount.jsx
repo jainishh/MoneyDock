@@ -66,7 +66,7 @@ function TradingAccount() {
     };
 
     return (
-        <div className="container mx-auto px-4 mt-8 mb-16 md:mt-24 max-w-5xl">
+        <div className="container mx-auto px-4 mt-28 mb-16 md:mt-36 max-w-5xl">
             <div className="flex flex-col md:flex-row items-center justify-between gap-12">
 
                 {/* ── LEFT: Features Panel ── */}

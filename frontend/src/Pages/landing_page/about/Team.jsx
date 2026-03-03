@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import { Users, ChevronDown, ExternalLink, Twitter, Globe, MessageCircle } from 'lucide-react';
+import ceoImg from '../../../assets/CEO/jainshpatel.jpg';
 
 const teamMembers = [
-    { name: 'Nikhil Kamath', role: 'Co-founder & CFO', img: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=250&auto=format&fit=crop', bio: 'Nikhil is an avid reader and always keeps up with the latest in the financial world.' },
+    { name: 'Nikhil Kamath', role: 'Co-founder', img: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=250&auto=format&fit=crop', bio: 'Nikhil is an avid reader and always keeps up with the latest in the financial world.' },
     { name: 'Dr. Kailash Nadh', role: 'CTO', img: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=250&auto=format&fit=crop', bio: 'Kailash has a PhD in Artificial Intelligence & Computational Linguistics, and is the mastermind behind our tech and products.' },
     { name: 'Venu Madhav', role: 'COO', img: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=250&auto=format&fit=crop', bio: 'Venu is the backbone of our operations ensuring smooth sailing for all our processes.' },
     { name: 'Seema Patil', role: 'Director', img: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=250&auto=format&fit=crop', bio: 'Seema has led the quality team since the beginning and is now a director. She is an extremely disciplined fitness enthusiast.' },
@@ -37,8 +38,8 @@ const Team = () => {
                 <div className="relative flex-shrink-0">
                     <div className="absolute inset-0 rounded-full bg-[var(--accent-primary)] blur-2xl opacity-20 pointer-events-none scale-110" />
                     <img
-                        src="https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=290&auto=format&fit=crop"
-                        alt="Nithin Kamath"
+                        src={ceoImg}
+                        alt="Jainish Patel"
                         className="relative z-10 w-36 h-36 md:w-44 md:h-44 rounded-full object-cover border-2 border-[var(--accent-primary)]/40 shadow-lg"
                     />
                     <div className="absolute -bottom-2 -right-2 z-20 bg-[var(--accent-primary)] text-white text-[10px] font-bold px-2.5 py-1 rounded-full uppercase tracking-widest shadow">
@@ -49,11 +50,11 @@ const Team = () => {
                 {/* Bio */}
                 <div className="flex-1 text-left space-y-3">
                     <div>
-                        <h3 className="text-xl md:text-2xl font-bold text-[var(--text-primary)] transition-colors duration-300">Nithin Kamath</h3>
+                        <h3 className="text-xl md:text-2xl font-bold text-[var(--text-primary)] transition-colors duration-300">Jainish Patel</h3>
                         <p className="text-sm text-[var(--accent-primary)] font-semibold">Founder & CEO</p>
                     </div>
                     <p className="text-[14px] text-[var(--text-secondary)] leading-relaxed transition-colors duration-300">
-                        Nithin bootstrapped and founded MoneyDock in 2010 to overcome the hurdles he faced during his decade-long stint as a trader. Today, MoneyDock has changed the landscape of the Indian broking industry.
+                        Jainish bootstrapped and founded MoneyDock to overcome the hurdles he faced during his stint as a trader. Today, MoneyDock has changed the landscape of the Indian broking industry.
                     </p>
                     <p className="text-[14px] text-[var(--text-secondary)] leading-relaxed transition-colors duration-300">
                         He is a member of the SEBI Secondary Market Advisory Committee (SMAC) and the Market Data Advisory Committee (MDAC). Playing basketball is his zen.
