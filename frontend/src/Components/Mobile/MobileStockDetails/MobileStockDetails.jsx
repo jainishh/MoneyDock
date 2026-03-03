@@ -150,7 +150,7 @@ const MobileStockDetails = () => {
             </div>
 
             {/* Live Market Indices */}
-            <MarketIndicesStrip variant="mobile" />
+            {/* <MarketIndicesStrip variant="mobile" /> */}
 
             {/* Scrollable Content */}
             <div className="flex-1 overflow-y-auto customscrollbar pb-24">
@@ -160,7 +160,7 @@ const MobileStockDetails = () => {
                         <div>
                             <div className="text-3xl font-bold text-[var(--text-primary)] mb-1">₹{stock.price}</div>
                             <div className={`text-xs font-bold flex items-center gap-1 ${stock.isUp ? 'text-[#089981]' : 'text-[#f23645]'}`}>
-                                {stock.change} ({stock.percent}%)
+                                {stock.change.toFixed(2)} ({stock.percent})
                                 {stock.isUp ? <ArrowUpRight size={14} /> : <ArrowDownRight size={14} />}
                                 <span className="text-[var(--text-muted)] ml-1 font-medium">Today</span>
                             </div>
