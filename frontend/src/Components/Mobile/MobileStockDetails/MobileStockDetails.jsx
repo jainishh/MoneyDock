@@ -6,6 +6,8 @@ import MarketDepthBottomSheet from './MarketDepthBottomSheet/MarketDepthBottomSh
 import MarketIndicesStrip from '../../Common/MarketIndicesStrip';
 import TradingViewChart from '../../Chart/TradingViewChart';
 
+const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+
 const MobileStockDetails = () => {
     const navigate = useNavigate();
     const location = useLocation();
@@ -32,15 +34,19 @@ const MobileStockDetails = () => {
     useEffect(() => {
         const userInfo = JSON.parse(localStorage.getItem('userInfo') || '{}');
         if (!userInfo?.token) return;
-        fetch('/api/watchlist/getAllWatchlists', { headers: { Authorization: `Bearer ${userInfo.token}` } })
+        fetch(`${API_BASE_URL}/api/watchlist/getAllWatchlists`, { headers: { Authorization: `Bearer ${userInfo.token}` } })
             .then(r => r.json())
             .then(data => { if (Array.isArray(data)) setAllWatchlists(data); })
             .catch(() => { });
     }, []);
 
     // Check if current stock exists in any watchlist
+    const currentToken = stock.token || stock.symboltoken;
     const isStarred = allWatchlists.some(wl =>
-        wl.stocks?.some(s => s.token === stock.token)
+        wl.stocks?.some(s => {
+            const sToken = s.token || s.symboltoken;
+            return sToken && currentToken && String(sToken) === String(currentToken);
+        })
     );
 
     const handleToggleWatchlist = (watchlistName, inList = false) => {
@@ -49,29 +55,29 @@ const MobileStockDetails = () => {
         const authToken = userInfo?.token;
         if (!authToken) { showToast('Please login first', false); return; }
 
-        const endpoint = inList ? '/api/watchlist/removeByToken' : '/api/watchlist/addByToken';
+        const endpoint = inList ? `${API_BASE_URL}/api/watchlist/removeByToken` : `${API_BASE_URL}/api/watchlist/addByToken`;
 
         // If removing from all (star click when already starred)
-        const body = { token: stock.token };
+        const body = { token: currentToken };
         if (watchlistName !== 'ALL') body.watchlistName = watchlistName;
 
         fetch(endpoint, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${authToken}` },
-            body: JSON.stringify({ token: stock.token, watchlistName: watchlistName === 'ALL' ? undefined : watchlistName })
+            body: JSON.stringify({ token: currentToken, watchlistName: watchlistName === 'ALL' ? undefined : watchlistName })
         }).then(r => r.json()).then(res => {
             if (res.success) {
                 if (inList) {
                     showToast(`✓ Removed from ${watchlistName === 'ALL' ? 'Watchlists' : watchlistName}`);
                     setAllWatchlists(prev => prev.map(wl =>
                         (watchlistName === 'ALL' || wl.name === watchlistName)
-                            ? { ...wl, stocks: (wl.stocks || []).filter(s => s.token !== stock.token) }
+                            ? { ...wl, stocks: (wl.stocks || []).filter(s => String(s.token || s.symboltoken) !== String(currentToken)) }
                             : wl
                     ));
                 } else {
                     showToast(`✓ Added to "${watchlistName}"`);
                     setAllWatchlists(prev => prev.map(wl =>
-                        wl.name === watchlistName ? { ...wl, stocks: [{ token: stock.token }, ...(wl.stocks || [])] } : wl
+                        wl.name === watchlistName ? { ...wl, stocks: [{ token: currentToken }, ...(wl.stocks || [])] } : wl
                     ));
                 }
                 window.dispatchEvent(new CustomEvent('watchlist-updated', { detail: { watchlistName } }));
@@ -302,7 +308,7 @@ const MobileStockDetails = () => {
                         ) : (
                             <div className="flex flex-col gap-2 max-h-[60vh] overflow-y-auto customscrollbar mb-2 px-1">
                                 {allWatchlists.map(wl => {
-                                    const inList = wl.stocks?.some(s => s.token === stock.token);
+                                    const inList = wl.stocks?.some(s => String(s.token || s.symboltoken) === String(currentToken));
                                     return (
                                         <button
                                             key={wl._id}
