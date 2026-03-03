@@ -6,6 +6,8 @@ import useAngelOneSocket from "../../../../Hooks/useAngelOneSocket";
 import BuyWindow from "../../../../Components/Buy&SellWindow/BuyWindow/BuyWindow";
 import SellWindow from "../../../../Components/Buy&SellWindow/SellWindow/SellWindow";
 
+const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+
 // ─── Popular Indices (Still used for the dropdown defaults) ─────────────────────
 const FNO_INDICES = [
   { name: "NIFTY", label: "NIFTY 50" },
@@ -103,7 +105,7 @@ function OptionChain({ initialUnderlying }) {
   useEffect(() => {
     const userInfo = JSON.parse(localStorage.getItem('userInfo') || '{}');
     if (!userInfo?.token) return;
-    fetch('/api/watchlist/getAllWatchlists', { headers: { Authorization: `Bearer ${userInfo.token}` } })
+    fetch(`${API_BASE_URL}/api/watchlist/getAllWatchlists`, { headers: { Authorization: `Bearer ${userInfo.token}` } })
       .then(r => r.json())
       .then(data => { if (Array.isArray(data)) setAllWatchlists(data); })
       .catch(() => { });
@@ -114,7 +116,7 @@ function OptionChain({ initialUnderlying }) {
   // Fetch valid option chain expiries from backend when underlyingName changes
   useEffect(() => {
     if (!underlyingName) return;
-    fetch(`/api/option-chain/custom/expiries/${underlyingName}`)
+    fetch(`${API_BASE_URL}/api/option-chain/custom/expiries/${underlyingName}`)
       .then(res => res.json())
       .then(json => {
         if (json.success && json.data) {
@@ -165,7 +167,7 @@ function OptionChain({ initialUnderlying }) {
 
     try {
       // Fetch data using our Custom Data Builder, removing Greek dependencies
-      const endpoint = "/api/option-chain/custom/chain";
+      const endpoint = `${API_BASE_URL}/api/option-chain/custom/chain`;
 
       const res = await fetch(endpoint, {
         method: "POST",
@@ -345,7 +347,7 @@ function OptionChain({ initialUnderlying }) {
     const authToken = userInfo?.token;
     if (!authToken) { showToast('Please login first', false); return; }
 
-    const endpoint = inList ? '/api/watchlist/removeByToken' : '/api/watchlist/addByToken';
+    const endpoint = inList ? `${API_BASE_URL}/api/watchlist/removeByToken` : `${API_BASE_URL}/api/watchlist/addByToken`;
     const symbol = optRaw.symbol || '';
 
     fetch(endpoint, {

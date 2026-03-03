@@ -1,5 +1,7 @@
 import { useState, useEffect, useCallback } from 'react';
 
+const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+
 /**
  * usePortfolio — fetches holdings + summary from backend
  * Pass userId if auth middleware is not yet active.
@@ -15,7 +17,7 @@ export function usePortfolio(userId) {
         setLoading(true);
         setError(null);
         try {
-            const res = await fetch(`/api/portfolio/holdings?userId=${userId}`);
+            const res = await fetch(`${API_BASE_URL}/api/portfolio/holdings?userId=${userId}`);
 
             // Check if response is OK
             if (!res.ok) {
