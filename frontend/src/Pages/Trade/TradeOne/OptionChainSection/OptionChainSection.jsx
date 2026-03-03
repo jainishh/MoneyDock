@@ -2,7 +2,7 @@ import React, { useState, useEffect, useCallback, useMemo } from "react";
 import ReactDOM from "react-dom";
 import { ArrowLeft, RefreshCw, AlertCircle, ChevronDown, Clock, Info, BarChart2, Star, Plus } from "lucide-react";
 import { useLocation, useNavigate } from "react-router-dom";
-import useAngelOneSocket from "../../../../hooks/useAngelOneSocket";
+import useAngelOneSocket from "../../../../Hooks/useAngelOneSocket";
 import BuyWindow from "../../../../Components/Buy&SellWindow/BuyWindow/BuyWindow";
 import SellWindow from "../../../../Components/Buy&SellWindow/SellWindow/SellWindow";
 
