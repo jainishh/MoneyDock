@@ -3,7 +3,7 @@
  * BSE Cash Market specific logic
  */
 
-import { createLogger } from '../../utils/logger.js';
+import { createLogger } from '../../Utils/logger.js';
 import { EXCHANGES } from '../../config/exchanges.config.js';
 
 const logger = createLogger('BSEService');
@@ -18,12 +18,12 @@ class BSEService {
      */
     validateToken(token) {
         const tokenStr = String(token).trim();
-        
+
         if (!/^\d{1,8}$/.test(tokenStr)) {
             logger.warn(`Invalid BSE token format: ${token}`);
             return false;
         }
-        
+
         return true;
     }
 

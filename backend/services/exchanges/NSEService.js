@@ -3,7 +3,7 @@
  * NSE Cash Market specific logic and validation
  */
 
-import { createLogger } from '../../utils/logger.js';
+import { createLogger } from '../../Utils/logger.js';
 import { EXCHANGES } from '../../config/exchanges.config.js';
 
 const logger = createLogger('NSEService');
@@ -19,12 +19,12 @@ class NSEService {
     validateToken(token) {
         // NSE tokens are typically 5-6 digit numbers
         const tokenStr = String(token).trim();
-        
+
         if (!/^\d{1,8}$/.test(tokenStr)) {
             logger.warn(`Invalid NSE token format: ${token}`);
             return false;
         }
-        
+
         return true;
     }
 

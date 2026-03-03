@@ -4,7 +4,7 @@
  * Forwards raw data to frontend (no parsing - frontend handles it)
  */
 
-import { createLogger } from '../../utils/logger.js';
+import { createLogger } from '../../Utils/logger.js';
 
 const logger = createLogger('DataStreamHandler');
 

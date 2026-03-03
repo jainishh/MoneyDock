@@ -4,7 +4,7 @@
  */
 
 import { WebSocketV2 } from 'smartapi-javascript';
-import { createLogger } from '../../utils/logger.js';
+import { createLogger } from '../../Utils/logger.js';
 import WEBSOCKET_CONFIG from '../../config/websocket.config.js';
 
 const logger = createLogger('WebSocketManager');

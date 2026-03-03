@@ -16,7 +16,7 @@ import {
 import { useLocation, useNavigate } from "react-router-dom";
 import TradingViewChart from "../../../../Components/Chart/TradingViewChart";
 import { useSocket } from "../../../../context/SocketContext";
-import { parseTickData } from "../../../../utils/stockDataParser";
+import { parseTickData } from "../../../../Utils/stockDataParser";
 
 function ChartSection() {
   const navigate = useNavigate();

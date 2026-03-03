@@ -1,5 +1,5 @@
 import restAPI from '../services/angelOneRestAPI.js';
-import { createLogger } from '../utils/logger.js';
+import { createLogger } from '../Utils/logger.js';
 
 const logger = createLogger('StockController');
 

@@ -2,8 +2,8 @@ import cron from 'node-cron';
 import Order from '../models/Order.js';
 import User from '../models/User.js';
 import restAPI from '../services/angelOneRestAPI.js';
-import { createLogger } from '../utils/logger.js';
-import { isMarketOpen } from '../utils/marketHours.js';
+import { createLogger } from '../Utils/logger.js';
+import { isMarketOpen } from '../Utils/marketHours.js';
 
 const logger = createLogger('PendingOrdersCron');
 
@@ -142,7 +142,7 @@ const checkAndExecutePendingOrders = async () => {
             if (!currentPrice) continue; // Quote not found for this token
 
             const isStopLoss = order.ordertype === 'STOPLOSS_MARKET' || order.ordertype === 'STOPLOSS_LIMIT';
-            
+
             // Limit Order Logic
             if (!isStopLoss) {
                 // BUY: Execute if current price is LESS THAN OR EQUAL to limit price
@@ -153,7 +153,7 @@ const checkAndExecutePendingOrders = async () => {
                 else if (order.transactiontype === 'SELL' && currentPrice >= order.price) {
                     await executeOrder(order, currentPrice);
                 }
-            } 
+            }
             // Stop Loss Logic (Real stock market logic)
             else {
                 // Determine the trigger threshold

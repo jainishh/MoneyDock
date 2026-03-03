@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { useSocket } from '../context/SocketContext';
-import { stocks as initialStocks } from '../utils/stockData.js';
-import { parseTickData, updateStockPrice, updateStocksWithTicks } from '../utils/stockDataParser.js';
+import { stocks as initialStocks } from '../Utils/stockData.js';
+import { parseTickData, updateStockPrice, updateStocksWithTicks } from '../Utils/stockDataParser.js';
 import { getMarketStatus, fetchStockQuotes } from '../services/angelOneService.js';
 
 const useAngelOneSocket = (dynamicStocks = null) => {
@@ -42,7 +42,7 @@ const useAngelOneSocket = (dynamicStocks = null) => {
                 setIsLoading(true);
 
                 // Check market status (non-blocking)
-                getMarketStatus().then(status => setMarketStatus(status)).catch(() => {});
+                getMarketStatus().then(status => setMarketStatus(status)).catch(() => { });
 
                 // Always fetch REST data for new/changed token sets (works even when market is closed)
                 if (!hasLoadedRestData.current) {

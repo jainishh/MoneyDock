@@ -1,7 +1,7 @@
 import cron from 'node-cron';
 import { autoLoginAngelOne } from '../controllers/angelController.js';
 import restAPI from '../services/angelOneRestAPI.js';
-import { createLogger } from '../utils/logger.js';
+import { createLogger } from '../Utils/logger.js';
 
 const logger = createLogger('AngelCron');
 

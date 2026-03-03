@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState, useCallback } from 'react';
 import { createChart, ColorType, CandlestickSeries, HistogramSeries } from 'lightweight-charts';
 import { useSocket } from '../../context/SocketContext';
 import axios from 'axios';
-import { parseTickData } from '../../utils/stockDataParser';
+import { parseTickData } from '../../Utils/stockDataParser';
 import { useTheme } from '../../context/ThemeContext';
 
 const BACKEND_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';

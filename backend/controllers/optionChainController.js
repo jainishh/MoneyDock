@@ -1,5 +1,5 @@
 import { getSessionCredentials } from './angelController.js';
-import { createLogger } from '../utils/logger.js';
+import { createLogger } from '../Utils/logger.js';
 import OptionChainCache from '../models/OptionChainCache.js';
 
 const logger = createLogger('OptionChain');
@@ -197,7 +197,7 @@ export const getOptionGreeks = async (req, res) => {
                 }
                 result = JSON.parse(rawText);
                 if (result.status && result.data && result.data.length > 0) {
-                    try { require('fs').writeFileSync('debug_greeks.json', JSON.stringify(result.data[0], null, 2)); } catch(e){}
+                    try { require('fs').writeFileSync('debug_greeks.json', JSON.stringify(result.data[0], null, 2)); } catch (e) { }
                     logger.success(`SUCCESS — ${result.data.length} records`);
                 } else {
                     lastError = result.message || 'No Data Available from API';
@@ -216,7 +216,7 @@ export const getOptionGreeks = async (req, res) => {
         // ── Process successful API response ───────────────────────────────
         if (result && result.status && result.data && result.data.length > 0) {
             const strikeMap = {};
-            
+
             // Try formatting tokens from ScripMaster
             let scripTokens = [];
             try {
@@ -226,10 +226,10 @@ export const getOptionGreeks = async (req, res) => {
                 if (fs.existsSync(scripPath)) {
                     const allScrips = JSON.parse(fs.readFileSync(scripPath, 'utf8'));
                     // Filter down to the specific index and expiry to speed up lookup
-                    scripTokens = allScrips.filter(s => 
-                        (s.exch_seg === 'NFO' || s.exch_seg === 'BFO') && 
-                        s.instrumenttype === 'OPTIDX' && 
-                        s.name === name && 
+                    scripTokens = allScrips.filter(s =>
+                        (s.exch_seg === 'NFO' || s.exch_seg === 'BFO') &&
+                        s.instrumenttype === 'OPTIDX' &&
+                        s.name === name &&
                         s.expiry === expirydate
                     );
                 }
@@ -242,11 +242,11 @@ export const getOptionGreeks = async (req, res) => {
                 if (!strikeMap[strike]) {
                     strikeMap[strike] = { strikePrice: strike, CE: null, PE: null };
                 }
-                
+
                 // Lookup scrip info for this specific option
                 const strikeStr = (strike * 100).toFixed(6); // Angel One Scrip Master precision (e.g. 23000 -> 2300000.000000)
-                const scripInfo = scripTokens.find(s => 
-                    s.strike === strikeStr && 
+                const scripInfo = scripTokens.find(s =>
+                    s.strike === strikeStr &&
                     s.symbol.endsWith(item.optionType)
                 );
 
@@ -302,10 +302,10 @@ export const getOptionGreeks = async (req, res) => {
                 const scripPath = path.resolve('ScripMaster.json');
                 if (fs.existsSync(scripPath)) {
                     const allScrips = JSON.parse(fs.readFileSync(scripPath, 'utf8'));
-                    scripTokens = allScrips.filter(s => 
-                        (s.exch_seg === 'NFO' || s.exch_seg === 'BFO') && 
-                        s.instrumenttype === 'OPTIDX' && 
-                        s.name === name && 
+                    scripTokens = allScrips.filter(s =>
+                        (s.exch_seg === 'NFO' || s.exch_seg === 'BFO') &&
+                        s.instrumenttype === 'OPTIDX' &&
+                        s.name === name &&
                         s.expiry === expirydate
                     );
                 }
@@ -317,11 +317,11 @@ export const getOptionGreeks = async (req, res) => {
 
             return chainData.map(strikeObj => {
                 const strikeStr = (parseFloat(strikeObj.strikePrice) * 100).toFixed(6);
-                
+
                 const injectToGreek = (greekObj, type) => {
                     if (!greekObj) return null;
-                    const scripInfo = scripTokens.find(s => 
-                        s.strike === strikeStr && 
+                    const scripInfo = scripTokens.find(s =>
+                        s.strike === strikeStr &&
                         s.symbol.endsWith(type)
                     );
                     if (scripInfo) {
@@ -345,10 +345,10 @@ export const getOptionGreeks = async (req, res) => {
         const dbCached = await getFromDb(name, expirydate);
         if (dbCached) {
             logger.info(`Serving DB cached data for ${name}:${expirydate}`);
-            
+
             // Inject tokens into cached data just in case they were missing
             const enhancedData = await injectTokens(dbCached.data);
-            
+
             return res.status(200).json({
                 success: true,
                 data: enhancedData,
@@ -391,11 +391,11 @@ export const getExpiries = async (req, res) => {
         const fs = await import('fs');
         const path = await import('path');
         const expiriesPath = path.resolve('expiries.json');
-        
+
         if (!fs.existsSync(expiriesPath)) {
             return res.status(404).json({ success: false, message: 'Expiries not found' });
         }
-        
+
         const data = fs.readFileSync(expiriesPath, 'utf8');
         return res.status(200).json({
             success: true,
@@ -419,7 +419,7 @@ export const getCustomExpiries = async (req, res) => {
         }
 
         const { default: Instrument } = await import('../models/Instrument.js');
-        
+
         // Find distinct expiries for this name where it's an option
         const expiries = await Instrument.distinct('expiry', {
             name: name,
@@ -518,7 +518,7 @@ export const getCustomOptionChain = async (req, res) => {
 
             const isCE = item.symbol.endsWith('CE');
             const isPE = item.symbol.endsWith('PE');
-            
+
             const optionData = {
                 delta: null, // Greeks are null because we don't fetch them for custom chain
                 gamma: null,

@@ -3,7 +3,7 @@
  * NSE Futures & Options specific logic
  */
 
-import { createLogger } from '../../utils/logger.js';
+import { createLogger } from '../../Utils/logger.js';
 import { EXCHANGES } from '../../config/exchanges.config.js';
 import { isFutures, isOptions } from '../../constants/instrumentTypes.js';
 
@@ -19,12 +19,12 @@ class NFOService {
      */
     validateToken(token) {
         const tokenStr = String(token).trim();
-        
+
         if (!/^\d{1,8}$/.test(tokenStr)) {
             logger.warn(`Invalid NFO token format: ${token}`);
             return false;
         }
-        
+
         return true;
     }
 

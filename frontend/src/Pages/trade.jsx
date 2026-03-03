@@ -1,7 +1,7 @@
 import { Routes, Route, Navigate, useLocation } from "react-router-dom";
 import NavBar from "../Components/NavBar/navBar";
 import StockList from "../Components/StockList/stockList";
-import TradeRoute from "../utils/tradeRoutes/TradeRoute";
+import TradeRoute from "../Utils/tradeRoutes/TradeRoute";
 import MobileNav from "../Components/NavBar/MobileNav/MobileNav";
 import MobileWatchlistPage from "../Components/Mobile/MobileWatchlist/MobileWatchlistPage";
 import Account from "./Trade/Accounts/Accounts";
