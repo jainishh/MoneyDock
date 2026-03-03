@@ -2,8 +2,8 @@ import cron from 'node-cron';
 import Order from '../models/Order.js';
 import User from '../models/User.js';
 import restAPI from '../services/angelOneRestAPI.js';
-import { createLogger } from '../Utils/logger.js';
-import { isMarketOpen } from '../Utils/marketHours.js';
+import { createLogger } from '../utils/logger.js';
+import { isMarketOpen } from '../utils/marketHours.js';
 
 const logger = createLogger('PendingOrdersCron');
 

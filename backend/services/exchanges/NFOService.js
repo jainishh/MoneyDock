@@ -3,7 +3,7 @@
  * NSE Futures & Options specific logic
  */
 
-import { createLogger } from '../../Utils/logger.js';
+import { createLogger } from '../../utils/logger.js';
 import { EXCHANGES } from '../../config/exchanges.config.js';
 import { isFutures, isOptions } from '../../constants/instrumentTypes.js';
 

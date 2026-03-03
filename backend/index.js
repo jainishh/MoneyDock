@@ -19,7 +19,7 @@ import optionChainRoutes from './routes/optionChainRoutes.js';
 import portfolioRoutes from './routes/portfolioRoutes.js';
 import startAngelLoginCron from './cron/angelLoginCron.js';
 import fetchInstruments from './cron/fetchInstrumentsCron.js';
-import { createLogger } from './Utils/logger.js';
+import { createLogger } from './utils/logger.js';
 
 dotenv.config();
 

@@ -1,8 +1,8 @@
 import Order from '../models/Order.js';
 import { smartApi } from '../config/angelConfig.js';
 import AngelOneCredential from '../models/AngelOneCredential.js';
-import { createLogger } from '../Utils/logger.js';
-import { isMarketOpen } from '../Utils/marketHours.js';
+import { createLogger } from '../utils/logger.js';
+import { isMarketOpen } from '../utils/marketHours.js';
 
 import User from '../models/User.js';
 

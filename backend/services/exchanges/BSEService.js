@@ -3,7 +3,7 @@
  * BSE Cash Market specific logic
  */
 
-import { createLogger } from '../../Utils/logger.js';
+import { createLogger } from '../../utils/logger.js';
 import { EXCHANGES } from '../../config/exchanges.config.js';
 
 const logger = createLogger('BSEService');

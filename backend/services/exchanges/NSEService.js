@@ -3,7 +3,7 @@
  * NSE Cash Market specific logic and validation
  */
 
-import { createLogger } from '../../Utils/logger.js';
+import { createLogger } from '../../utils/logger.js';
 import { EXCHANGES } from '../../config/exchanges.config.js';
 
 const logger = createLogger('NSEService');

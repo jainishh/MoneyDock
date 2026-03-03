@@ -265,7 +265,7 @@ export const getSessionCredentials = async () => {
  */
 export const getMarketStatus = async (req, res) => {
     try {
-        const { getMarketStatus: getStatus } = await import('../Utils/marketHours.js');
+        const { getMarketStatus: getStatus } = await import('../utils/marketHours.js');
         const status = getStatus();
 
         res.json({

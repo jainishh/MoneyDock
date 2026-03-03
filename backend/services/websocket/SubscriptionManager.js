@@ -3,10 +3,10 @@
  * Manages stock subscriptions across multiple exchanges with different modes
  */
 
-import { createLogger } from '../../Utils/logger.js';
+import { createLogger } from '../../utils/logger.js';
 import { getExchangeConfig, getExchangeTypeId } from '../../config/exchanges.config.js';
 import { SUBSCRIPTION_MODES } from '../../constants/subscriptionModes.js';
-import { normalizeStockTokens } from '../../Utils/validators.js';
+import { normalizeStockTokens } from '../../utils/validators.js';
 
 const logger = createLogger('SubscriptionManager');
 

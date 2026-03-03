@@ -4,7 +4,7 @@
  */
 
 import { SmartAPI } from 'smartapi-javascript';
-import { createLogger } from '../Utils/logger.js';
+import { createLogger } from '../utils/logger.js';
 import { getExchangeConfig } from '../config/exchanges.config.js';
 
 const logger = createLogger('AngelOneREST');
