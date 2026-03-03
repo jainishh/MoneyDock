@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Trade from "./Pages/trade.jsx";
-import LandingRoute from "./utils/LandingRoute/LandingRoute.jsx";
+import LandingRoute from "./Utils/LandingRoute/LandingRoute.jsx";
 import { SocketProvider } from "./context/SocketContext";
 
 import { ToastProvider } from "./context/ToastContext";
