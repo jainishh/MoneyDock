@@ -10,40 +10,45 @@ export default defineConfig({
     tailwindcss(),
     VitePWA({
       registerType: 'autoUpdate',
-      includeAssets: ['offline.html', 'icons/*.png'],
+
+      // ─── Web App Manifest ─────────────────────────────────────────────────
+      // This is what makes the browser offer "Add to Home Screen" on mobile
       manifest: {
         name: 'MoneyDock',
         short_name: 'MoneyDock',
         description: 'MoneyDock – Your smart trading dashboard',
         theme_color: '#0b0e14',
         background_color: '#0b0e14',
-        display: 'standalone',
+        display: 'standalone',       // opens as an app (no browser chrome)
         orientation: 'portrait-primary',
         start_url: '/',
         scope: '/',
         icons: [
           {
-            src: '/icons/icon-192x192.png',
+            src: 'icons/icon-192x192.png',
             sizes: '192x192',
             type: 'image/png',
           },
           {
-            src: '/icons/icon-512x512.png',
+            src: 'icons/icon-512x512.png',
             sizes: '512x512',
             type: 'image/png',
           },
           {
-            src: '/icons/icon-512x512.png',
+            src: 'icons/icon-512x512.png',
             sizes: '512x512',
             type: 'image/png',
             purpose: 'maskable',
           },
         ],
       },
+
+      // ─── Workbox (Service Worker) Config ──────────────────────────────────
       workbox: {
-        // Cache all static assets aggressively
-        globPatterns: ['**/*.{js,css,html,ico,png,svg,woff2}'],
-        // Network-first for API routes (live data must always be fresh)
+        // Cache static assets (JS, CSS, fonts, images) for fast loads
+        globPatterns: ['**/*.{js,css,ico,png,svg,woff2}'],
+
+        // API calls: always try network first (live stock data must be fresh)
         runtimeCaching: [
           {
             urlPattern: /^https?:\/\/.*\/api\/.*/i,
@@ -51,22 +56,24 @@ export default defineConfig({
             options: {
               cacheName: 'api-cache',
               networkTimeoutSeconds: 10,
-              cacheableResponse: {
-                statuses: [0, 200],
-              },
+              cacheableResponse: { statuses: [0, 200] },
             },
           },
           {
             urlPattern: /^https?:\/\/.*\/socket\.io\/.*/i,
-            handler: 'NetworkOnly', // never cache websocket traffic
+            handler: 'NetworkOnly', // WebSocket — never cache
           },
         ],
-        // Show offline.html when user navigates to uncached page while offline
-        navigateFallback: '/offline.html',
-        navigateFallbackDenylist: [/^\/api\//, /^\/socket\.io\//],
+
+        // IMPORTANT: Do NOT set navigateFallback here.
+        // For a React SPA, the service worker already caches index.html and
+        // serves it for all navigations. Setting offline.html here would show
+        // the offline page even when the user IS online.
       },
+
       devOptions: {
-        enabled: false, // disable SW in dev to avoid stale cache headaches
+        enabled: true,   // show SW active in dev (install prompt works)
+        type: 'module',
       },
     }),
   ],
